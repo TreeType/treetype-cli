@@ -4,4 +4,6 @@ Converts TreeType defs into TypeScript defs.
 
 Just do `cat defs.yml | dotnet ttgen > defs.d.ts`.
 
-_TODO: place docs about the yml format here_.
+YML format docs: see FORMAT.md
+
+Extra credits: this cli split out from bespoke code for [this repo](https://github.com/Cumcord/typings)
