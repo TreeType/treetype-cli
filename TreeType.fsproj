@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <!-- Essentials -->
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+
+        <Title>TreeType def generator</Title>
+        <Description>A CLI for TreeType to generate defs</Description>
+        <PackageProjectUrl>https://github.com/treetype</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/treetype/treetype-cli</RepositoryUrl>
+        <PackageLicenseFile>UNLICENSE</PackageLicenseFile>
+        <!--<PackageIcon>cumglue.png</PackageIcon>-->
+        <PackageTags>js;ts;typescript;typedefs;treetype</PackageTags>
+        <Authors>Yellowsink</Authors>
+
+        <!-- For SourceLink. See: https://github.com/dotnet/sourcelink#using-source-link-in-net-projects -->
+        <!--<PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>-->
+        
+        <!-- Packs this as a tool, not a library. -->
+        <PackAsTool>true</PackAsTool>
+        <ToolCommandName>ttgen</ToolCommandName>
+        <!--<PackageOutputPath>./nupkg</PackageOutputPath>-->
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="Util.fs" />
+        <Compile Include="YamlParser.fs" />
+        <Compile Include="Transform.fs" />
+        <Compile Include="Emitter.fs" />
+        <Compile Include="Program.fs" />
+
+        <None Include="$(MSBuildThisFileDirectory)\UNLICENSE" Visible="false" Pack="true" PackagePath="" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="FSharp.Data.Yaml" Version="1.0.0" />
+    </ItemGroup>
+
+</Project>
